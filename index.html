@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Appo - Page 1</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    #welcomeMessage {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 24px;
+    }
+
+    #madeBy {
+      text-align: center;
+      margin-top: 10px;
+      color: green;
+    }
+
+    #accessMessage {
+      text-align: center;
+      margin-top: 20px;
+      color: red;
+    }
+
+    #appList {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .app {
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="welcomeMessage">Welcome to Social Appo</h1>
+  <p id="madeBy">Made by Yuvraj Parmar</p>
+  <p id="accessMessage">Access any app without login</p>
+  <div id="appList"></div>
+
+  <script>
+    // Function to change background color every 5 seconds
+    function changeBackgroundColor() {
+      const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#00ffff']; // Add more colors as needed
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      document.body.style.backgroundColor = randomColor;
+    }
+
+    // Function to generate app list
+    function generateAppList() {
+      const appLinks = {
+        'Google': 'https://www.google.com',
+        'YouTube': 'https://www.youtube.com',
+        'Facebook': 'https://www.facebook.com',
+        'Instagram': 'https://www.instagram.com',
+        'WhatsApp': 'https://www.whatsapp.com',
+        'Twitter': 'https://twitter.com',
+        'Snapchat': 'https://www.snapchat.com',
+        'TikTok': 'https://www.tiktok.com',
+        'LinkedIn': 'https://www.linkedin.com',
+        'Pinterest': 'https://www.pinterest.com',
+        'Reddit': 'https://www.reddit.com',
+        'Tumblr': 'https://www.tumblr.com',
+        'Twitch': 'https://www.twitch.tv',
+        'Netflix': 'https://www.netflix.com',
+        'Spotify': 'https://www.spotify.com'
+      };
+
+      const appListDiv = document.getElementById('appList');
+      Object.keys(appLinks).forEach(appName => {
+        const appDiv = document.createElement('div');
+        appDiv.classList.add('app');
+        appDiv.textContent = appName;
+        appDiv.addEventListener('click', () => openApp(appLinks[appName]));
+        appListDiv.appendChild(appDiv);
+      });
+    }
+
+    // Function to open an app link in a new tab
+    function openApp(link) {
+      window.open(link, '_blank');
+    }
+
+    // Change background color every 5 seconds
+    setInterval(changeBackgroundColor, 5000);
+
+    // Generate app list
+    generateAppList();
+  </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Appo - Page 2</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    #page2 {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 36px;
+    }
+
+    #madeBy {
+      text-align: center;
+      margin-top: 10px;
+      color: green;
+    }
+
+    .colorful-line {
+      width: 50%;
+      margin: 0 auto;
+      border-top: 3px solid red;
+      border-right: 3px solid yellow;
+      border-bottom: 3px solid blue;
+      border-left: 3px solid green;
+    }
+
+    #aiText {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 36px;
+    }
+
+    #aiLine {
+      width: 50%;
+      margin: 20px auto;
+      border-top: 3px solid green;
+      border-right: 3px solid blue;
+      border-bottom: 3px solid red;
+      border-left: 3px solid yellow;
+    }
+
+    #aiWebsites {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .aiWebsite {
+      margin: 10px;
+      cursor: pointer;
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div id="page2">
+    Page 2
+    <div class="colorful-line"></div>
+    <p id="aiText">ai</p>
+    <div id="aiLine" class="colorful-line"></div>
+    <div id="aiWebsites">
+      <p>Real AI Websites:</p>
+      <p class="aiWebsite" onclick="openWebsite('https://openai.com')">1. OpenAI</p>
+      <p class="aiWebsite" onclick="openWebsite('https://www.ibm.com/watson')">2. IBM Watson</p>
+      <p class="aiWebsite" onclick="openWebsite('https://www.microsoft.com/en-us/ai')">3. Microsoft AI</p>
+      <p class="aiWebsite" onclick="openWebsite('https://ai.google')">4. Google AI</p>
+      <p class="aiWebsite" onclick="openWebsite('https://deepmind.com')">5. DeepMind</p>
+      <p class="aiWebsite" onclick="openWebsite('https://www.tensorflow.org')">6. TensorFlow</p>
+      <p class="aiWebsite" onclick="openWebsite('https://pytorch.org')">7. PyTorch</p>
+      <p class="aiWebsite" onclick="openWebsite('https://www.nvidia.com/en-us/industries/ai-and-deep-learning')">8. NVIDIA AI</p>
+      <p class="aiWebsite" onclick="openWebsite('https://ai.facebook.com')">9. Facebook AI</p>
+      <p class="aiWebsite" onclick="openWebsite('https://ai.googleblog.com')">10. Google AI Blog</p>
+      <p class="aiWebsite" onclick="openWebsite('https://www.oxford-ai.com')">11. Oxford AI</p>
+      <p class="aiWebsite" onclick="openWebsite('https://deepai.org')">12. DeepAI</p>
+      <p class="aiWebsite" onclick="openWebsite('https://ai.google/research')">13. Google AI Research</p>
+      <p class="aiWebsite" onclick="openWebsite('https://www.kaggle.com')">14. Kaggle</p>
+      <p class="aiWebsite" onclick="openWebsite('https://www.alibabacloud.com')">15. Alibaba Cloud AI</p>
+      <p class="aiWebsite" onclick="openWebsite('https://www.bing.com')">16. Bing AI</p>
+      <p class="aiWebsite" onclick="openWebsite('https://www.salesforce.com/products/einstein/overview')">17. Salesforce Einstein</p>
+      <p class="aiWebsite" onclick="openWebsite('https://www.adobe.com/products/sensei.html')">18. Adobe Sensei</p>
+      <p class="aiWebsite" onclick="openWebsite('https://www.didi-labs.com')">19. DiDi Labs AI</p>
+      <p class="aiWebsite" onclick="openWebsite('https://www.veritone.com/solutions/ai-platform')">20. Veritone AI</p>
+    </div>
+  </div>
+
+  <script>
+    // Function to open a website in a new tab
+    function openWebsite(link) {
+      window.open(link, '_blank');
+    }
+  </script>
+</body>
+</html>
+
